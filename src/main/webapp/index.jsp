@@ -20,28 +20,30 @@
 		<form action="save" method="post">
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Name</label> <input name="name" type="text" class="form-control"
-					id="exampleFormControlInput1" placeholder="ex:Dinga">
+					id="exampleFormControlInput1" placeholder="ex:Dinga" required>
 			</div>
 			
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Email
 					address</label> <input type="email" name="email" class="form-control"
-					id="exampleFormControlInput1" placeholder="name@example.com">
+					id="exampleFormControlInput1" placeholder="name@example.com" required>
 			</div>
 			
 			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label">Phone</label> <input type="text" name="phone" class="form-control"
-					id="exampleFormControlInput1" placeholder="99******12">
+				<label for="exampleFormControlInput1" class="form-label">Phone</label> <input type="number" name="phone" class="form-control"
+					id="exampleFormControlInput1" placeholder="99******12" required>
 			</div>
 			
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Password</label> <input type="password" name="password" class="form-control"
-					id="exampleFormControlInput1" placeholder="dinga@123">
+					id="exampleFormControlInput1" placeholder="dinga@123" required>
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Register</button>
 			
 		</form>
+		
+		<a href="login">Login Page</a>
 
 	</div>
 
