@@ -13,7 +13,6 @@ import com.ty.empapp.service.EmpService;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-
 @Controller
 public class EmpController {
 
@@ -32,7 +31,7 @@ public class EmpController {
 
 	@GetMapping("/add")
 	public ModelAndView addEmployee() {
-		ModelAndView mv = new ModelAndView("add.jsp");
+		ModelAndView mv = new ModelAndView("index.jsp");
 		mv.addObject("employee", new Employee());
 		return mv;
 	}
@@ -83,31 +82,42 @@ public class EmpController {
 
 		List<Employee> employees = empService.getAll();
 
-		mv.addObject("emps", employees);	
+		mv.addObject("emps", employees);
 		return mv;
 	}
-	
+
 	@PostMapping("/add")
 	public ModelAndView addEmployee(Employee employee) {
-		
-		System.out.println(employee.getEid()+"in addEmpl");
-		
-		String msg = empService.save(employee);
+
+		String msg = empService.update(employee);
 
 		ModelAndView mv = new ModelAndView("add.jsp");
 		mv.addObject("msg", msg);
 
 		return mv;
 	}
-	
+
 	@GetMapping("/edit")
 	public ModelAndView editEmployee(@RequestParam Integer eid) {
 		Employee employee = empService.findById(eid);
 		ModelAndView mv = new ModelAndView("add.jsp");
-		mv.addObject("emp", employee);
+		mv.addObject("employee", employee);
 		return mv;
 	}
-	
-	
+
+	@GetMapping("/delete")
+	public ModelAndView getMethodName(@RequestParam Integer eid) {
+
+		String msg = empService.deleteByEid(eid);
+
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("home.jsp");
+
+		List<Employee> employees = empService.getAll();
+
+		mv.addObject("emps", employees);
+		mv.addObject("msg", msg);
+		return mv;
+	}
 
 }

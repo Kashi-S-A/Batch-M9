@@ -30,6 +30,7 @@
 					<th scope="col">Phone</th>
 					<th scope="col">Update</th>
 					<th scope="col">Delete</th>
+					<th scope="col">Send Email</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -42,8 +43,9 @@
 					<td><%=employee.getName() %></td>
 					<td><%=employee.getEmail() %></td>
 					<td><%=employee.getPhone() %></td>
-					<td><a href="/edit<%=request.getContextPath() %>?eid=<%=employee.getEid() %>">update</a></td>
-					<td><a href="#">Delete</a></td>
+					<td><a href="<%=request.getContextPath() %>/edit?eid=<%=employee.getEid() %>">update</a></td>
+					<td><a href="<%=request.getContextPath() %>/delete?eid=<%=employee.getEid() %>">Delete</a></td>
+					<td><a href="<%=request.getContextPath() %>/send?eid=<%=employee.getEid() %>">Email</a></td>
 				</tr>
 
 				<%

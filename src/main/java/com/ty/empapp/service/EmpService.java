@@ -48,4 +48,14 @@ public class EmpService {
 	public Employee findById(Integer eid) {
 		return empRepository.findById(eid).get();
 	}
+	
+	public String update(Employee employee) {
+		empRepository.save(employee);
+		return "updated";
+	}
+
+	public String deleteByEid(Integer eid) {
+		empRepository.deleteById(eid);
+		return "Deleted";
+	}
 }

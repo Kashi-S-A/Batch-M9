@@ -18,15 +18,15 @@
 
 		<h1>Employee</h1>
 		<h6>${msg}</h6>
-		<%
-		Employee employee = (Employee) request.getAttribute("emp");
-		%>
 		<form action="add" method="post">
-
+			<%
+			Employee employee = (Employee) request.getAttribute("employee");
+			/* out.print(employee); */
+			%>
 			<div class="mb-3">
-				<label for="exampleFormControlInput1" class="form-label"></label>
-				<input name="name" type="hidden" class="form-control"
-					id="exampleFormControlInput1" placeholder="ex:Dinga"
+				<label for="ex1" class="form-label"></label> <input
+					name="eid" type="hidden" class="form-control"
+					id="ex1" placeholder="ex:Dinga"
 					value="<%=employee.getEid()%>" required>
 			</div>
 			<div class="mb-3">

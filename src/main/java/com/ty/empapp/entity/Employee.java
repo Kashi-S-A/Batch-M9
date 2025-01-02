@@ -24,7 +24,7 @@ public class Employee {
 	
 	private String name;
 	 
-	@Column(unique = true)
+//	@Column(unique = true)
 	private String email;
 	
 	private Long phone;
